@@ -163,17 +163,7 @@ return b;
  * @returns {Function}
  */
 function getOperationFn(initialValue, operatorFn) {
-    let currentValue = initialValue;
-
-return function(newValue) {
-    if (typeof operatorFn !== 'function') {
-        return initialValue;
-    }
-
-    currentValue = operatorFn(currentValue, newValue);
-
-    return currentValue;
-};
+    // Ваш код
 }
 
 /**
@@ -194,18 +184,7 @@ return function(newValue) {
  * @returns {Function}
  */
 function sequence(start, step) {
-    if (start === undefined) start = 0;
-if (step === undefined) step = 1;
-
-let current = start;
-
-return function() {
-    const result = current;
-
-    current += step;
-
-    return result;
-};
+    // Ваш код
 }
 
 /**
@@ -230,41 +209,7 @@ return function() {
  * @returns {boolean}
  */
 function deepEqual(firstObject, secondObject) {
-    if (Object.is(firstObject, secondObject)) {
-    return true;
-}
-
-if (
-    typeof firstObject !== 'object' ||
-    firstObject === null ||
-    typeof secondObject !== 'object' ||
-    secondObject === null
-) {
-    return false;
-}
-
-if (Array.isArray(firstObject) !== Array.isArray(secondObject)) {
-    return false;
-}
-
-const firstKeys = Reflect.ownKeys(firstObject);
-const secondKeys = Reflect.ownKeys(secondObject);
-
-if (firstKeys.length !== secondKeys.length) {
-    return false;
-}
-
-for (const key of firstKeys) {
-    if (!Object.prototype.hasOwnProperty.call(secondObject, key)) {
-        return false;
-    }
-
-    if (!deepEqual(firstObject[key], secondObject[key])) {
-        return false;
-    }
-}
-
-return true;
+    // Ваш код
 }
 
 module.exports = {
